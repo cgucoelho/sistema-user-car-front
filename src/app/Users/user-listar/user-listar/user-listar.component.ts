@@ -11,10 +11,13 @@ import { User } from '../../user.model';
 export class UserListarComponent implements OnInit{
 
   users$: Observable<User[]>;
+
+  displayedColumns = ['id', 'firstName', 'lastName', 'email', 'birthday' ,'login', 'phone' ]
+
   constructor(private userService : UserService) { }
 
   ngOnInit() {
-    this.listarUsers
+    this.listarUsers();
   }
 
   listarUsers(){
