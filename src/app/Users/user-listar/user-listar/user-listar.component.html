@@ -4,6 +4,9 @@
 <ng-template #carregando>
     <mat-spinner></mat-spinner>
 </ng-template>
+<div class="linha-botoes">
+    <button mat-raised-button color="primary" routerLink="/users/cadastrar">Cadastrar</button>
+</div>
 <div class="componente-container">
     <div *ngIf="users$ | async as users; else carregando">
         <table mat-table [dataSource]="users" class="mat-elevation-z8">
@@ -39,5 +42,6 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table> 
     </div>
+    
 </div>
 
