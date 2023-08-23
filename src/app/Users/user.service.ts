@@ -8,13 +8,13 @@ import { User } from './user.model';
 })
 export class UserService {
 
-  private endpoint = 'http://localhost:8080/api/users';
-
+  private baseUrl = 'http://localhost:8080/';
+  private endpoint = 'api/users'
 
   constructor(private http: HttpClient) { }
 
   listar(): Observable<User[]>{
-     return this.http.get<User[]>(`${this.endpoint}`);
+     return this.http.get<User[]>(`${this.baseUrl}${this.endpoint}`);
 
   }
 
