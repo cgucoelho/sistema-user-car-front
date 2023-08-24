@@ -32,6 +32,7 @@
         </mat-form-field>
         <div class="linha-botoes">
             <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button *ngIf="user && user.id"  color="warn" (click)="deletar()" >Excluir</button>
             <button type="button" mat-raised-button routerLink="/users">Cancelar</button>
         </div>
     </form>

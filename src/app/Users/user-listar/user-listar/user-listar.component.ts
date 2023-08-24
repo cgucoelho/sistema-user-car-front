@@ -12,7 +12,7 @@ export class UserListarComponent implements OnInit{
 
   users$: Observable<User[]>;
 
-  displayedColumns = ['id', 'firstName', 'lastName', 'email', 'birthday' ,'login', 'phone' ]
+  displayedColumns = ['id', 'firstName', 'lastName', 'email', 'birthday' ,'login', 'phone', 'acao' ]
 
   constructor(private userService : UserService) { }
 
@@ -23,5 +23,6 @@ export class UserListarComponent implements OnInit{
   listarUsers(){
     this.users$ = this.userService.listar();
   }
+  
 
 }
