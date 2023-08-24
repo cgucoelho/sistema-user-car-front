@@ -1,5 +1,38 @@
-<mat-toolbar>Cadastrar Usuário</mat-toolbar>
+<mat-toolbar>{{(user && user.id)?'Editar Usuário': 'Cadastrar Usuário'}}</mat-toolbar>
 
 <div class="componente-container">
-
+    <form class="form-padrao" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvar()" novalidate>
+        <mat-form-field>
+            <input matInput placeholder="Primeiro nome" formControlName="firstName" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Segundo nome" formControlName="lastName" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Data de nascimento" formControlName="birthday" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Login" formControlName="login" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" formControlName="password" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone para contato" formControlName="phone" required>
+            <mat-error>Campo obrigaório</mat-error>
+        </mat-form-field>
+        <div class="linha-botoes">
+            <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button type="button" mat-raised-button routerLink="/users">Cancelar</button>
+        </div>
+    </form>
 </div>

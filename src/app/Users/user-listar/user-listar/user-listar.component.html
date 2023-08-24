@@ -12,7 +12,9 @@
         <table mat-table [dataSource]="users" class="mat-elevation-z8">
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef> ID </th>
-              <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+              <td mat-cell *matCellDef="let user"> 
+                <a routerLink="/users/editar/{{user.id}}">{{user.id}}</a>   
+              </td>
             </ng-container>
             <ng-container matColumnDef="firstName">
               <th mat-header-cell *matHeaderCellDef> Nome </th>
